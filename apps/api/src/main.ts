@@ -17,12 +17,13 @@ const bootstrap = async (): Promise<void> => {
 
   app.setGlobalPrefix(globalPrefix);
 
-  const port = process.env['PORT'] || 3333;
+  const host = process.env['API_HOST'] || '0.0.0.0';
+  const port = process.env['API_PORT'] || 3333;
 
-  await app.listen(port);
+  await app.listen(port, host);
 
   Logger.log(
-    `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
+    `🚀 Application is running on: http://${host}:${port}/${globalPrefix}`
   );
 };
 
