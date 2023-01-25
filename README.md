@@ -6,6 +6,10 @@ Nx starter for complete full stack development including NestJS and Angular with
 
 15.6.0
 
+## Nest Version
+
+9.0.0
+
 ## Angular Version
 
 15.1.0
@@ -43,25 +47,25 @@ Nx starter for complete full stack development including NestJS and Angular with
 
 ## 🕹 Commands
 
-Serve project in development mode.
+Serve apps in development mode.
 
 ```bash
 npm start
 ```
 
-Build project for production.
+Build apps for production.
 
 ```bash
 npm run build
 ```
 
-Test project.
+Test all.
 
 ```bash
 npm test
 ```
 
-Lint project.
+Lint all.
 
 ```bash
 npm run lint
