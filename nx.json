@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "nx-angular-starter",
+  "npmScope": "nx-ultimate-starter",
   "affected": {
     "defaultBase": "main"
   },
@@ -79,5 +79,5 @@
       "standalone": true
     }
   },
-  "defaultProject": "nx-angular-starter"
+  "defaultProject": "web"
 }

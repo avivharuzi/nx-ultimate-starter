@@ -1,6 +1,6 @@
 {
-  "name": "nx-angular-starter",
-  "short_name": "nx-angular-starter",
+  "name": "web",
+  "short_name": "web",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
