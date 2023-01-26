@@ -17,7 +17,14 @@ const bootstrap = async (): Promise<void> => {
   const globalPrefix = 'api';
 
   app.setGlobalPrefix(globalPrefix);
-  app.useGlobalPipes(new ValidationPipe());
+
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: true,
+    })
+  );
 
   const { host, port } = app.get(EnvService);
 
