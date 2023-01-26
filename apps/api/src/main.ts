@@ -6,6 +6,7 @@ import {
 } from '@nestjs/platform-fastify';
 
 import { AppModule } from './app/app.module';
+import { EnvService } from './app/env';
 
 const bootstrap = async (): Promise<void> => {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -18,8 +19,7 @@ const bootstrap = async (): Promise<void> => {
   app.setGlobalPrefix(globalPrefix);
   app.useGlobalPipes(new ValidationPipe());
 
-  const host = process.env['API_HOST'] || '0.0.0.0';
-  const port = process.env['API_PORT'] || 3333;
+  const { host, port } = app.get(EnvService);
 
   await app.listen(port, host);
 
