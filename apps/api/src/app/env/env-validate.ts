@@ -24,6 +24,10 @@ class EnvVariables implements Env {
 
   @IsString()
   @IsNotEmpty()
+  API_COOKIE_SECRET!: string;
+
+  @IsString()
+  @IsNotEmpty()
   API_MONGODB_URI!: string;
 }
 

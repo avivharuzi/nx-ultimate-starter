@@ -7,5 +7,6 @@ export interface Env {
   NODE_ENV: NodeEnv;
   API_HOST: string;
   API_PORT: number;
+  API_COOKIE_SECRET: string;
   API_MONGODB_URI: string;
 }

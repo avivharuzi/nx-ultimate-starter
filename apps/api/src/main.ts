@@ -1,3 +1,4 @@
+import fastifyCookie from '@fastify/cookie';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import {
@@ -26,7 +27,11 @@ const bootstrap = async (): Promise<void> => {
     })
   );
 
-  const { host, port } = app.get(EnvService);
+  const { host, port, cookieSecret } = app.get(EnvService);
+
+  await app.register(fastifyCookie, {
+    secret: cookieSecret,
+  });
 
   await app.listen(port, host);
 

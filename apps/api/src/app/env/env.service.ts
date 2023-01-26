@@ -19,6 +19,10 @@ export class EnvService {
     return this.configService.get('API_PORT', { infer: true })!;
   }
 
+  get cookieSecret(): string {
+    return this.configService.get('API_COOKIE_SECRET', { infer: true })!;
+  }
+
   get mongodbURI(): string {
     return this.configService.get('API_MONGODB_URI', { infer: true })!;
   }
