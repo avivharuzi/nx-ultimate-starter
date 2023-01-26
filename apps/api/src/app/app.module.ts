@@ -12,9 +12,11 @@ import { EnvModule, EnvService, envValidate } from './env';
     }),
     EnvModule,
     MongooseModule.forRootAsync({
-      useFactory: async (envService: EnvService) => {return ({
-        uri: envService.mongodbURI,
-      })},
+      useFactory: async (envService: EnvService) => {
+        return {
+          uri: envService.mongodbURI,
+        };
+      },
       inject: [EnvService],
     }),
   ],
