@@ -1,5 +1,6 @@
 import compression from '@fastify/compress';
 import fastifyCookie from '@fastify/cookie';
+import helmet from '@fastify/helmet';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import {
@@ -30,12 +31,14 @@ import { EnvService } from './app/env';
 
   const { host, port, cookieSecret } = app.get(EnvService);
 
-  await app.register(compression, {
-    encodings: ['gzip', 'deflate'],
-  });
+  await app.register(helmet);
 
   await app.register(fastifyCookie, {
     secret: cookieSecret,
+  });
+
+  await app.register(compression, {
+    encodings: ['gzip', 'deflate'],
   });
 
   await app.listen(port, host);
