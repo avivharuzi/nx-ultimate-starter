@@ -17,7 +17,7 @@ import { EnvService } from './app/env';
     new FastifyAdapter()
   );
 
-  const globalPrefix = 'api';
+  const { host, port, cookieSecret, globalPrefix } = app.get(EnvService);
 
   app.setGlobalPrefix(globalPrefix);
 
@@ -29,8 +29,7 @@ import { EnvService } from './app/env';
     })
   );
 
-  const { host, port, cookieSecret } = app.get(EnvService);
-
+  app.enableCors();
   await app.register(helmet);
 
   await app.register(fastifyCookie, {

@@ -19,6 +19,10 @@ export class EnvService {
     return this.configService.get('API_PORT', { infer: true })!;
   }
 
+  get globalPrefix(): string {
+    return this.configService.get('API_GLOBAL_PREFIX', { infer: true })!;
+  }
+
   get cookieSecret(): string {
     return this.configService.get('API_COOKIE_SECRET', { infer: true })!;
   }
