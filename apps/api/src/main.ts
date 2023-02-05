@@ -14,7 +14,7 @@ import { EnvService } from './app/env';
 (async (): Promise<void> => {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
-    new FastifyAdapter()
+    new FastifyAdapter({ maxParamLength: 1000 })
   );
 
   const { host, port, cookieSecret, globalPrefix } = app.get(EnvService);
